@@ -41,7 +41,9 @@ class SUtil
 		#if android
 		if (!AndroidPermissions.getGrantedPermissions().contains('android.permission.READ_EXTERNAL_STORAGE') || !AndroidPermissions.getGrantedPermissions().contains('android.permission.WRITE_EXTERNAL_STORAGE'))
 		{
-			AndroidPermissions.requestPermission(['READ_EXTERNAL_STORAGE', 'WRITE_EXTERNAL_STORAGE']);
+		    for (Exc in ['READ_EXTERNAL_STORAGE', 'WRITE_EXTERNAL_STORAGE'])
+			AndroidPermissions.requestPermission(Exc);
+			
 			SUtil.applicationAlert('Permissions', "if you acceptd the permissions all good if not expect a crash" + '\n' + 'Press Ok to see what happens');
 		}
 
