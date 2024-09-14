@@ -9,9 +9,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
-#if android
-import android.Hardware;
-#end
 
 class GameOverSubstate extends MusicBeatSubstate
 {
@@ -65,7 +62,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		#if android
 		if(ClientPrefs.vibration)
 		{
-			Hardware.vibrate(vibrationTime);
+			CoolUtil.vibrate(vibrationTime);
 		}
 		#end
 
