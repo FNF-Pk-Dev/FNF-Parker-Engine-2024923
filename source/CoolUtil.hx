@@ -6,6 +6,7 @@ import flixel.FlxCamera;
 import openfl.utils.Assets;
 import haxe.display.Display.Package;
 import haxe.io.Path;
+import lime.system.JNI;
 import lime.utils.Assets as LimeAssets;
 import lime.utils.AssetLibrary;
 import lime.utils.AssetManifest;
@@ -209,6 +210,12 @@ class CoolUtil
 			}
 		}
 		return files;
+	}
+
+	public static function vibrate(inputValue:Int):Void
+	{
+		var vibrate_jni = JNI.createStaticMethod("org/haxe/extension/Hardware", "vibrate", "(I)V");
+		vibrate_jni(inputValue);
 	}
 	
 	public static inline function getFileStringFromPath(file:String):String
