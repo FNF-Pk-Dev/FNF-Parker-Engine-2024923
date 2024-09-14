@@ -62,7 +62,6 @@ import Discord;
 #end
 
 #if android
-import android.Hardware;
 import android.FlxNewHitbox;
 #end
 
@@ -2475,7 +2474,7 @@ class FunkinLua {
 
 		set("vibration", function(milliseconds:Int) {
 			#if android
-			Hardware.vibrate(milliseconds);
+			CoolUtil.vibrate(milliseconds);
 			#end
 		});
 
